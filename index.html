@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1630">
+  <meta name="description" content="Portafolio de desarrollo de software de AronSc21. Proyectos web y sistemas de información.">
+  <title>Portafolio | Desarrollo de Software</title>
+
+  <style>
+    :root {
+      --fondo: #0b1630;
+      --tarjeta: #111f3d;
+      --azul: #4f7cff;
+      --blanco: #f5f7ff;
+      --texto: #b7c3dc;
+      --borde: #253657;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--fondo);
+      color: var(--blanco);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contenedor {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--borde);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--azul);
+    }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+      color: var(--texto);
+      font-size: .95rem;
+    }
+
+    .menu a:hover,
+    .enlace:hover {
+      color: #8eabff;
+    }
+
+    .hero {
+      padding: 110px 0 100px;
+      background:
+        radial-gradient(ellipse at 85% 15%, #1c3260 0%, transparent 42%),
+        var(--fondo);
+    }
+
+    .etiqueta {
+      display: inline-block;
+      color: #a9beff;
+      background: #17294e;
+      border: 1px solid #2d477c;
+      padding: 6px 13px;
+      border-radius: 30px;
+      font-size: .8rem;
+      letter-spacing: 1.3px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 800px;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--azul);
+    }
+
+    .introduccion {
+      max-width: 650px;
+      color: var(--texto);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 650;
+      transition: transform .2s, background .2s;
+    }
+
+    .boton:hover {
+      transform: translateY(-2px);
+    }
+
+    .primario {
+      background: var(--azul);
+      color: white;
+    }
+
+    .primario:hover {
+      background: #3c68e4;
+    }
+
+    .secundario {
+      border: 1px solid #465b80;
+      background: #111f3d;
+    }
+
+    section.proyectos {
+      padding: 75px 0 95px;
+    }
+
+    .subtitulo {
+      color: #9db5ff;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 8px 0 12px;
+    }
+
+    .descripcion-seccion {
+      color: var(--texto);
+      margin-bottom: 35px;
+    }
+
+    .rejilla {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .proyecto {
+      background: linear-gradient(145deg, #142444, var(--tarjeta));
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      min-height: 290px;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .proyecto:hover {
+      border-color: var(--azul);
+      transform: translateY(-4px);
+    }
+
+    .numero {
+      color: #8eabff;
+      font-size: .85rem;
+      letter-spacing: 2px;
+    }
+
+    .proyecto h3 {
+      font-size: 1.35rem;
+      margin: 15px 0 10px;
+    }
+
+    .proyecto p {
+      color: var(--texto);
+      font-size: .95rem;
+      margin-bottom: 20px;
+    }
+
+    .tecnologias {
+      color: #9db5ff;
+      font-size: .82rem;
+      margin-top: auto;
+      margin-bottom: 18px;
+    }
+
+    .enlace {
+      color: white;
+      font-weight: 650;
+      font-size: .93rem;
+    }
+
+    .sobre-mi {
+      padding: 60px 0;
+      border-top: 1px solid var(--borde);
+      border-bottom: 1px solid var(--borde);
+      background: #0e1a34;
+    }
+
+    .sobre-mi p {
+      max-width: 740px;
+      color: var(--texto);
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--texto);
+      font-size: .88rem;
+    }
+
+    .pie {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 75px 0;
+      }
+
+      .rejilla {
+        grid-template-columns: 1fr;
+      }
+
+      .menu {
+        gap: 14px;
+        font-size: .85rem;
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .menu {
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: .9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="contenedor">
+      <a class="logo" href="#inicio">PORTA<span>FOLIO.</span></a>
+      <div class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="contenedor">
+        <span class="etiqueta">PORTAFOLIO PERSONAL</span>
+        <h1>Desarrollo de software <span>con propósito.</span></h1>
+        <p class="introduccion">
+          Soy estudiante de Sistemas Computacionales Administrativos.
+          Me interesa desarrollar soluciones digitales, aplicaciones web
+          y sistemas de información que resuelvan necesidades reales.
+        </p>
+
+        <div class="botones">
+          <a class="boton primario" href="#proyectos">Explorar proyectos ↘</a>
+          <a class="boton secundario"
+             href="https://github.com/AronSc21"
+             target="_blank" rel="noopener noreferrer">
+            Ver mi GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proyectos" id="proyectos">
+      <div class="contenedor">
+        <span class="subtitulo">Trabajo seleccionado</span>
+        <h2>Proyectos destacados</h2>
+        <p class="descripcion-seccion">
+          Algunos de mis proyectos de desarrollo y programación.
+        </p>
+
+        <div class="rejilla">
+          <article class="proyecto">
+            <span class="numero">PROYECTO 01</span>
+            <h3>SIVI</h3>
+            <p>
+              Sistema de información desarrollado para organizar
+              procesos de viáticos.
+            </p>
+            <span class="tecnologias">C# · SQL Server · Desarrollo web</span>
+            <a class="enlace"
+               href="https://github.com/AronSc21/SIVI-Portafolio"
+               target="_blank" rel="noopener noreferrer">
+              Ver repositorio ↗
+            </a>
+          </article>
+
+          <article class="proyecto">
+            <span class="numero">PROYECTO 02</span>
+            <h3>Despacho Adago</h3>
+            <p>
+              Sitio web institucional para presentar los servicios
+              de un despacho contable.
+            </p>
+            <span class="tecnologias">HTML · CSS · JavaScript</span>
+            <a class="enlace"
+               href="https://github.com/AronSc21/Sitio-Web-Despacho-Adago"
+               target="_blank" rel="noopener noreferrer">
+              Ver repositorio ↗
+            </a>
+          </article>
+
+          <article class="proyecto">
+            <span class="numero">PROYECTO 03</span>
+            <h3>Proveedores</h3>
+            <p>
+              Proyecto de software relacionado con la gestión
+              de proveedores y procesos administrativos.
+            </p>
+            <span class="tecnologias">Sistemas de información</span>
+            <a class="enlace"
+               href="https://github.com/AronSc21/Proveedores"
+               target="_blank" rel="noopener noreferrer">
+              Ver repositorio ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sobre-mi" id="contacto">
+      <div class="contenedor">
+        <span class="subtitulo">Perfil profesional</span>
+        <h2>Aprender, construir y mejorar.</h2>
+        <p>
+          Mi objetivo es seguir fortaleciendo mis habilidades en
+          programación, bases de datos, desarrollo web y sistemas
+          de información.
+        </p>
+        <div class="botones" style="margin-top: 24px;">
+          <a class="boton primario"
+             href="https://github.com/AronSc21"
+             target="_blank" rel="noopener noreferrer">
+            Conoce mi GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor pie">
+      <span>© 2026 · Portafolio de desarrollos</span>
+      <span>Desarrollado por AronSc21</span>
+    </div>
+  </footer>
+</body>
+</html>
